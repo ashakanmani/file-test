@@ -21,7 +21,7 @@ stage('Continuous Deployment')
 {
     steps
     {
-        deploy adapters: [tomcat9(credentialsId: '4df038cb-8c9d-4d76-a2e8-21368eb423fc', path: '', url: 'http://172.31.16.157:8080')], contextPath: 'test', onFailure: false, war: '**/*.war'
+     deploy adapters: [tomcat9(credentialsId: '6ce1037e-da05-4c1f-ad32-a1fb8d167030', path: '', url: 'http://172.31.6.184:8080')], contextPath: 'test', onFailure: false, war: '**/*'  
     }
 }
 stage('Continuous testing')
@@ -37,7 +37,7 @@ stage('Continuous Delivery')
 {
 steps
 {
-    deploy adapters: [tomcat9(credentialsId: 'd4e3976f-2e51-4d08-84dc-ed31f86ea163', path: '', url: 'http://172.31.25.80:8080')], contextPath: 'prod', onFailure: false, war: '**/*.war'
+   deploy adapters: [tomcat9(credentialsId: 'f51b0c58-3774-4088-a365-b0ba28d9cb3e', path: '', url: 'http://172.31.15.200:8080')], contextPath: 'prod', onFailure: false, war: '**/*'
 }
 }
     }
